@@ -5,7 +5,7 @@ form.addEventListener('submit', function onFormSubmitted(event) {
   if (!form.checkValidity()) {
     event.stopPropagation()
     event.preventDefault()
-    alert('Form invalid')  //驗證不通過，就跳 alert
+    alert('請輸入正確網址')  //驗證不通過，就跳 alert
   }
 })
 

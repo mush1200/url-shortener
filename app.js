@@ -7,19 +7,8 @@ const baseUrl = 'http://localhost:3000/'
 //載入驗證有效URL model
 const validUrl = require('valid-url')
 const filterShortUrl = require('./models/shortenUrl')
-//載入Mongoose
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/urlShortenerData', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection  //取得資料庫連線狀態
-
-//連線異常
-db.on('error', () => {
-  console.log('mongodb error!')
-})
-//連線成功
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
+//載入mongoose model
+require('./config/mongoose')
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')

@@ -1,7 +1,6 @@
-const mongoose = require('mongoose')
 const Url = require('../url') // 載入 url model
-mongoose.connect('mongodb://localhost/urlShortenerData', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
+const db = require('../../config/mongoose')
+
 
 const data = [
   {
@@ -11,9 +10,6 @@ const data = [
   }
 ]
 
-db.on('error', () => {
-  console.log('mongodb error!')
-})
 db.once('open', () => {
   console.log('mongodb connected!')
   Url.create(data)

@@ -14,7 +14,7 @@
 ## 安裝流程
 1. 在終端機輸入指令 clone 此專案至本機電腦
 ```
-git clone https://github.com/mush1200/Middleware.git
+git clone https://github.com/mush1200/url-shortener.git
  ```
 2. 進入專案資料夾
 ```

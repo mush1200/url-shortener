@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
-const port = 3000
+const PORT = process.env.PORT || 3000
 const Url = require('./models/url')
 const baseUrl = 'http://localhost:3000/'
 //載入驗證有效URL model
@@ -57,6 +57,6 @@ app.get('/:id', (req, res) => {
     .catch((error) => console.error(error))
 })
 
-app.listen(port, () => {
-  console.log(`App is running on port ${port}.`)
+app.listen(PORT, () => {
+  console.log(`App is running on http://localhost:${PORT}.`)
 })
